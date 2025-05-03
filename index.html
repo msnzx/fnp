@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Fuel Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Authentication Section -->
+        <div id="auth-section" class="section">
+            <h2>Login / Register</h2>
+            <div class="auth-forms">
+                <form id="login-form">
+                    <h3>Login</h3>
+                    <input type="text" id="login-username" placeholder="Username" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <form id="register-form">
+                    <h3>Register</h3>
+                    <input type="text" id="register-username" placeholder="Username" required>
+                    <input type="password" id="register-password" placeholder="Password" required>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Vehicles Section -->
+        <div id="vehicles-section" class="section hidden">
+            <h2>My Vehicles</h2>
+            <button id="add-vehicle-btn" class="add-btn">Add Vehicle</button>
+            <div id="vehicles-list" class="list"></div>
+            
+            <!-- Add/Edit Vehicle Modal -->
+            <div id="vehicle-modal" class="modal hidden">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3 id="vehicle-modal-title">Add Vehicle</h3>
+                    <form id="vehicle-form">
+                        <input type="text" id="vehicle-make" placeholder="Make" required>
+                        <input type="text" id="vehicle-model" placeholder="Model" required>
+                        <input type="number" id="vehicle-year" placeholder="Year" required>
+                        <input type="text" id="vehicle-license" placeholder="License Plate" required>
+                        <button type="submit">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fuel Logs Section -->
+        <div id="fuel-logs-section" class="section hidden">
+            <h2>Fuel Logs</h2>
+            <button id="add-fuel-log-btn" class="add-btn">Add Fuel Log</button>
+            <div id="fuel-logs-list" class="list"></div>
+            
+            <!-- Add/Edit Fuel Log Modal -->
+            <div id="fuel-log-modal" class="modal hidden">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3 id="fuel-log-modal-title">Add Fuel Log</h3>
+                    <form id="fuel-log-form">
+                        <select id="fuel-log-vehicle" required></select>
+                        <input type="date" id="fuel-log-date" required>
+                        <input type="number" id="fuel-log-amount" placeholder="Amount (liters)" step="0.01" required>
+                        <input type="number" id="fuel-log-price" placeholder="Price per liter" step="0.01" required>
+                        <input type="number" id="fuel-log-odometer" placeholder="Odometer Reading" required>
+                        <textarea id="fuel-log-notes" placeholder="Notes"></textarea>
+                        <button type="submit">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/vehicles.js"></script>
+    <script src="js/fuelLogs.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
